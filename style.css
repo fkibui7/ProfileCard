@@ -13,12 +13,12 @@
        Teal: hsl(174, 63%, 62%)
 
     */
-    --hue:207;
-    --sat:90%;
-    --lig:61%;
+    --hue:14;
+    --sat:100%;
+    --lig:64%;
 
     --firt-color: hsl(var(--hue), var(--sat), var(--lig));
-    --first-color-alt: hsl(var(--hue), var(--sat), 57%); /* -4% */
+    --first-color-alt: hsl(var(--hue), var(--sat), 60%); /* -4% */
     --title-color: hsl(var(--hue), 12%, 15%);
     --text-color: hsl(var(--hue), 12%, 45%);
     --text-color-light: hsl(var(--hue), 8%, 75%);
@@ -106,7 +106,7 @@ body.dark-theme{
     --title-color: hsl(var(--hue), 12%, 95%);
     --text-color: hsl(var(--hue), 12%, 75%);
     --body-color: hsl(var(--hue), 40%, 8%);
-    --container-color: hsl(var(--hue), 40%, 8%);
+    --container-color: hsl(var(--hue), 24%, 12%);
 }
 
 
@@ -119,7 +119,7 @@ body.dark-theme{
 }
 
 .dark-theme .button__gray:hover{
-    background-color: hsl((--hue), 24%, 16%);
+    background-color: hsl(var(--hue), 24%, 16%);
 }
 
 .dark-theme .filters__content{
@@ -195,16 +195,23 @@ body.dark-theme{
 }
 
 .profile__profession {
-    font-size: var(--smaller-font-size);
+    font-size: 15px;
     font-weight: 500;
-    color: var(--text-color);
     margin-bottom: 1rem;
+    color: rgb(57, 122, 101);
+}
+
+.profile__about {
+    font-size: var(--small-font-size);
+    margin-top: -.9rem;
+    color: rgb(110, 119, 116);
 }
 
 .profile__social {
     display: flex;
     justify-content: center;
     column-gap: .75rem;
+    margin-top: 1rem;
 }
 
 .profile__social-link {
@@ -472,15 +479,17 @@ body.dark-theme{
     }
 
     .filters__content{
-        min-width: 332px;
+        width: 332px;
         margin: 3rem auto;
     }
 }
 
 @media screen and (min-width:776px) {
-    .projects__content,
+    .projects__content  {
+        grid-template-columns: repeat(3, 332px);
+}
     .skills__content{
-       grid-template-columns: repeat(3, 332px);
+       grid-template-columns: repeat(2, 332px);
     }
     .skills__content{
         justify-content: center;
@@ -515,10 +524,14 @@ body.dark-theme{
         width: 90px;
     }
     .profile__profession {
-        margin-bottom: 1.5rem;
+        margin-top: -.1rem;
+    }
+    .profile__about {
+        margin-top: -.9rem;
     }
     .profile__info{
         column-gap: 3rem;
+        margin-top: -1rem;
     }
     .profile__info-description{
         font-size: var(--small-font-size);
